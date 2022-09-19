@@ -1,7 +1,33 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './pages/home/home.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    component:HomeComponent
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./pages/register/register.module').then(m => m.RegisterModule)
+  },
+  {
+    path: 'myProfile',
+    loadChildren: () => import('./pages/my-profile/my-profile.module').then(m => m.MyProfileModule)
+  },
+  {
+    path: 'user',
+    loadChildren: () => import('./pages/user/user.module').then(m => m.UserModule)
+  },
+  {
+    path: '**',
+    redirectTo: ''
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

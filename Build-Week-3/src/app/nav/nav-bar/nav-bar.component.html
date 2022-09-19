@@ -1,0 +1,24 @@
+<li nz-menu-item [routerLink]="'/'">
+  <span nz-icon nzType="home"></span>
+  <span>Home</span>
+</li>
+<li nz-submenu nzTitle="Utente" nzIcon="user"><!-- se registrato sostituire col nome utente -->
+  <ul>
+    <li nz-menu-item>
+      <span nz-icon nzType="login" nzTheme="outline"></span>
+        <span>Accedi</span>
+    </li>
+    <li nz-menu-item [routerLink]="'/register'">
+      <span nz-icon nzType="edit" nzTheme="outline"></span>
+      <span>Registrati</span>
+    </li>
+  </ul>
+</li>
+<li nz-menu-item>
+  <span nz-icon nzType="comment"></span>
+  <span>Pubblica</span>
+</li>
+<li nz-menu-item>
+  <span nz-icon nzType="monitor"></span>
+  <span>Cerca</span>
+</li>
