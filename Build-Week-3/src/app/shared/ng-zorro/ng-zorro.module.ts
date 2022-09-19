@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
+
 
 
 @NgModule({
@@ -12,15 +12,12 @@ import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
     CommonModule,
     NzLayoutModule,
     NzMenuModule,
-    NzIconModule,
-    NzBreadCrumbModule
-
+    NzIconModule
   ],
   exports: [
     NzLayoutModule,
     NzMenuModule,
-    NzIconModule,
-    NzBreadCrumbModule
+    NzIconModule
   ]
 })
 export class NgZorroModule { }

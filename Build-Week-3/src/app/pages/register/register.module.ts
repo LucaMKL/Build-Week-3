@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { RegisterRoutingModule } from './register-routing.module';
 import { RegisterComponent } from './register.component';
+import { NzSharedFormModule } from 'src/app/shared/ng-zorro/nz-shared-form.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { RegisterComponent } from './register.component';
   ],
   imports: [
     CommonModule,
-    RegisterRoutingModule
+    RegisterRoutingModule,
+    NzSharedFormModule
   ]
 })
 export class RegisterModule { }
