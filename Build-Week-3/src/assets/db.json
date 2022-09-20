@@ -1,6 +1,40 @@
 {
   "users": [
+    {
+      "email": "gymudexop@mailinator.com",
+      "password": "$2a$10$K9s.ZRR2OQhtB023yGzNku/6T2KwZqhqy/s6/QYwC3jAZJeY9xMqe",
+      "name": "Nora Goodman",
+      "username": "vuronysov",
+      "id": 1
+    },
+    {
+      "email": "tyvyhikyx@mailinator.com",
+      "password": "$2a$10$fg8yQFTF.dduBefhYPEBq.ZNmvV/rIxzr9ZQfdaa09.KsI3fhf3hu",
+      "name": "Illiana Wilkinson",
+      "username": "Consequatur Quidem ",
+      "id": 2
+    },
+    {
+      "email": "mede@mailinator.com",
+      "password": "$2a$10$UegZmQxfRIwL.K2O4DQ5KusX55pRgkt3qcNnlLrk1d/U8KfnYR8Cu",
+      "name": "Travis Peterson",
+      "username": "ligicizomu",
+      "id": 3
+    },
+    {
+      "email": "gabujylezu@mailinator.com",
+      "password": "$2a$10$45.4qAVdlrzcfS.M.KUzH.VeXj9w511GXTDZGV8qiBW/8iZG9PtEO",
+      "name": "Kadeem Beach",
+      "username": "pene2",
+      "id": 4
+    },
+    {
+      "email": "zywybohak@mailinator.com",
+      "password": "$2a$10$NSbArlWxfGg8QQLGlpPyz.oT1xO.oo24hJzfzdZZtMoq1jp2/Zv6e",
+      "name": "Gregory Molina",
+      "username": "stocactus",
+      "id": 5
+    }
   ],
-  "posts": [
-  ]
+  "posts": []
 }

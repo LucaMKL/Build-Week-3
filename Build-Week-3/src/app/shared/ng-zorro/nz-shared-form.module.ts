@@ -5,7 +5,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
-
+import { NzNotificationModule } from 'ng-zorro-antd/notification';
 
 @NgModule({
   declarations: [],
@@ -16,7 +16,8 @@ import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
     NzFormModule,
     NzButtonModule,
     NzInputModule,
-    NzCheckboxModule
+    NzCheckboxModule,
+    NzNotificationModule
   ],
   exports:[
     FormsModule,
@@ -24,7 +25,8 @@ import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
     NzFormModule,
     NzButtonModule,
     NzInputModule,
-    NzCheckboxModule
+    NzCheckboxModule,
+    NzNotificationModule
   ]
 })
 export class NzSharedFormModule { }

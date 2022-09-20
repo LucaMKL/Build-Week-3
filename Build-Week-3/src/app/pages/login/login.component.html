@@ -1,14 +1,14 @@
 <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
   <h3>Login</h3>
     <nz-form-item>
-      <nz-form-control nzErrorTip="Please input your email!">
+      <nz-form-control nzErrorTip="Formato email inserita errato!">
         <nz-input-group nzPrefixIcon="user">
           <input type="text" nz-input formControlName="email" placeholder="email" />
         </nz-input-group>
       </nz-form-control>
     </nz-form-item>
     <nz-form-item>
-      <nz-form-control nzErrorTip="Please input your Password!">
+      <nz-form-control nzErrorTip="Inserisci password!">
         <nz-input-group nzPrefixIcon="lock">
           <input type="password" nz-input formControlName="password" placeholder="Password" />
         </nz-input-group>
@@ -17,14 +17,11 @@
     <div nz-row class="login-form-margin">
       <div nz-col [nzSpan]="12">
         <label nz-checkbox formControlName="remember">
-          <span>Remember me</span>
+          <span>Ricordami</span>
         </label>
       </div>
-      <div nz-col [nzSpan]="12">
-        <a class="login-form-forgot">Forgot password</a>
-      </div>
     </div>
-    <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Log in</button>
-    Or
-    <a [routerLink]="'/register'">register now!</a>
+    <button nz-button class="login-form-button login-form-margin" [nzLoading]="isLoading" [nzType]="'primary'">Log in</button>
+    Oppure
+    <a [routerLink]="'/register'">registrati adesso!</a>
   </form>

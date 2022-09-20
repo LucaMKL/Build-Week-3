@@ -1,19 +1,25 @@
 .login-form {
-    max-width: 300px;
-    margin: 0 auto;
-    margin-top: 20vh;
+  max-width: 300px;
+  margin: 0 auto;
+  margin-top: 20vh;
+
+  &>h3{
+    font-size: 1.3rem;
   }
+}
 
-  .login-form-margin {
-    margin-bottom: 16px;
-  }
+.login-form-margin {
+  margin-bottom: 16px;
+}
 
-  .login-form-forgot {
-    float: right;
-  }
+.login-form-forgot {
+  float: right;
+}
 
-  .login-form-button {
-    width: 100%;
-  }
+.login-form-button {
+  width: 100%;
+}
 
-
+a{
+  color: #33777c
+}
