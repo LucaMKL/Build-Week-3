@@ -1,6 +1,15 @@
-nz-descriptions {
-  margin: 1rem 0.5rem;
+ nz-descriptions {
+   margin: 1rem 0.5rem;
 
-  border-color:  #341ad8;
+ }
 
-}
+ ::ng-deep .ant-descriptions-bordered {
+
+   .ant-descriptions-view,
+   .ant-descriptions-item-content,
+   .ant-descriptions-row {
+     border-color: #003669;
+     background-color: #003669;
+     color: white;
+   }
+ }

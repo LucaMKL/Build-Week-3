@@ -41,6 +41,13 @@
       "name": "sergio",
       "username": "sergio",
       "id": 6
+    },
+    {
+      "email": "homigi@mailinator.com",
+      "password": "$2a$10$.US0Le7p5droR04j4b8bCuDRXjnosRhCcj17Gc0RqTFuPI4YCPjRK",
+      "name": "Kelly Bond",
+      "username": "hupuninik",
+      "id": 7
     }
   ],
   "posts": []

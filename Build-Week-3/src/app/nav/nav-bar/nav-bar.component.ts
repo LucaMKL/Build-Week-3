@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/Auth/auth.service';
 import { ModaleComponent } from '../modale/modale.component';
 
@@ -8,7 +9,7 @@ import { ModaleComponent } from '../modale/modale.component';
   styleUrls: ['./nav-bar.component.scss'],
 })
 export class NavBarComponent implements OnInit {
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   isLogged: boolean = false;
   userId?: number;
@@ -31,6 +32,7 @@ export class NavBarComponent implements OnInit {
 
   logout(){
     this.authService.removeAccess()
+    this.router.navigate(['/'])
   }
 
   showModal(): void {

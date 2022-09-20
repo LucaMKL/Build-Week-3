@@ -15,8 +15,7 @@ export class MyProfileComponent implements OnInit {
     name: '',
     username: '',
     email: '',
-    password: '',
-    likedPost: []
+    password: ''
   }
 
   constructor(private authService :AuthService, private route:ActivatedRoute,) { }
