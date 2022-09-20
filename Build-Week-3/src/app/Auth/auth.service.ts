@@ -56,7 +56,9 @@ export class AuthService {
     );
   }
 
-  getUserById() {}
+  getUserById(id: number | string): Observable<IUser> {
+    return this.http.get<IUser>(API + '/users/' + id);
+  }
 
   getToken() {}
 

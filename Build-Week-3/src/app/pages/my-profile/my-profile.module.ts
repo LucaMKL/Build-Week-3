@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { MyProfileRoutingModule } from './my-profile-routing.module';
 import { MyProfileComponent } from './my-profile.component';
+import { NzDescriptionsModule } from 'ng-zorro-antd/descriptions';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { MyProfileComponent } from './my-profile.component';
   ],
   imports: [
     CommonModule,
-    MyProfileRoutingModule
+    MyProfileRoutingModule,
+    NzDescriptionsModule
   ]
 })
 export class MyProfileModule { }

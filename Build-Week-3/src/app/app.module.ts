@@ -12,16 +12,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavBarComponent } from './nav/nav-bar/nav-bar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NgZorroModule } from './shared/ng-zorro/ng-zorro.module';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { ModaleComponent } from './nav/modale/modale.component';
 registerLocaleData(it);
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
-    HomeComponent
+    HomeComponent,
+    ModaleComponent
   ],
   imports: [
-
+    NzModalModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

@@ -34,6 +34,13 @@
       "name": "Gregory Molina",
       "username": "stocactus",
       "id": 5
+    },
+    {
+      "email": "sergio@sergio.com",
+      "password": "$2a$10$eNNMyioQYIwGkDyA2VRVVudNkfH1a4UPUmO3cm48dM0JtRkE0tngu",
+      "name": "sergio",
+      "username": "sergio",
+      "id": 6
     }
   ],
   "posts": []

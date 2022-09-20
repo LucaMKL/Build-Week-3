@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { IUser } from 'src/app/Model/iuser';
+import { ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/Auth/auth.service';
 
 @Component({
   selector: 'app-my-profile',
@@ -7,9 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyProfileComponent implements OnInit {
 
-  constructor() { }
+  user: IUser = {
+    id: -1,
+    name: '',
+    username: '',
+    email: '',
+    password: '',
+    likedPost: []
+  }
+
+  constructor(private authService :AuthService, private route:ActivatedRoute,) { }
 
   ngOnInit(): void {
+  this.route.params.subscribe(res => {
+    this.authService.getUserById(res['id'])
+    .subscribe({
+      next: (res) => this.user = res
+    })
+  })
   }
 
 }
