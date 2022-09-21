@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/Auth/auth.service';
 
 @Component({
   selector: 'app-modale',
@@ -7,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ModaleComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService:AuthService) { }
 
   ngOnInit(): void {
   }
@@ -24,5 +25,15 @@ export class ModaleComponent implements OnInit {
 
   handleCancel(): void {
     this.isVisible = false;
+  }
+
+  addPost():void{
+
+  }
+  editPost():void{
+
+  }
+  deletePost():void{
+
   }
 }

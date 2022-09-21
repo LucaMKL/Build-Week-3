@@ -9,8 +9,8 @@
     </nz-form-item>
     <nz-form-item>
       <nz-form-control nzErrorTip="Inserisci password!">
-        <nz-input-group nzPrefixIcon="lock">
-          <input type="password" nz-input formControlName="password" placeholder="Password" />
+        <nz-input-group nzPrefixIcon="lock" [nzSuffix]="suffixTemplate">
+          <input [type]="passwordVisible ? 'text' : 'password'" nz-input formControlName="password" placeholder="Password" />
         </nz-input-group>
       </nz-form-control>
     </nz-form-item>
@@ -25,3 +25,11 @@
     Oppure
     <a [routerLink]="'/register'">registrati adesso!</a>
   </form>
+
+  <ng-template #suffixTemplate>
+    <span
+      nz-icon
+      [nzType]="passwordVisible ? 'eye-invisible' : 'eye'"
+      (click)="passwordVisible = !passwordVisible"
+    ></span>
+  </ng-template>

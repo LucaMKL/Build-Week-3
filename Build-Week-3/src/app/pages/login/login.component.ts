@@ -13,6 +13,8 @@ export class LoginComponent implements OnInit {
   validateForm!: FormGroup;
   isLoading: boolean = false;
 
+  passwordVisible = false;
+
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
@@ -35,7 +37,8 @@ export class LoginComponent implements OnInit {
         next: (res) => this.authService.saveAccess(res, this.validateForm.value.remember),
         complete: () => this.router.navigate(['/']),
         error: (err) => {
-          console.error('httpError', err);
+          console.error(this.validateForm.value);
+          console.error('httpError', err.error);
           this.isLoading = false;
           this.errorNotification.create(
             'error',

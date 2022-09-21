@@ -1,17 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import {
-  AbstractControl,
   FormBuilder,
   FormControl,
   FormGroup,
-  ValidationErrors,
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
-import { Observable, Observer, Subscriber } from 'rxjs';
 import { AuthService } from 'src/app/Auth/auth.service';
-import { IUser } from 'src/app/Model/iuser';
+import { ValidatorService } from 'src/app/Model/validator.service';
 
 @Component({
   selector: 'app-register',
@@ -26,7 +23,8 @@ export class RegisterComponent implements OnInit {
     private formBuilder: FormBuilder,
     private authService: AuthService,
     private router: Router,
-    private errorNotification: NzNotificationService
+    private errorNotification: NzNotificationService,
+    private validationService: ValidatorService
   ) {}
 
   ngOnInit(): void {
@@ -35,12 +33,12 @@ export class RegisterComponent implements OnInit {
       username: [
         null,
         [Validators.required, Validators.minLength(3)],
-        this.usernameValidator,
+        this.validationService.usernameValidator,
       ],
       email: [
         null,
         [Validators.email, Validators.required],
-        this.emailValidator,
+        this.validationService.emailValidator,
       ],
       password: [null, [Validators.required, Validators.minLength(5)]],
       confirm: ['', [this.confirmValidator]],
@@ -52,10 +50,9 @@ export class RegisterComponent implements OnInit {
     delete this.validateForm.value.confirm
     this.authService.register(this.validateForm.value)
     .subscribe({
-      next: (res) => console.log(res),
       complete: () => this.router.navigate(['/login']),
       error: (err) => {
-        console.error('httpError', err);
+        console.error('httpError', err.error);
         this.isLoading = false;
         this.errorNotification.create(
           'error',
@@ -80,29 +77,4 @@ export class RegisterComponent implements OnInit {
     return null;
   };
 
-  emailValidator = (
-    control: AbstractControl
-  ): Promise<ValidationErrors | null> => {
-    return new Promise<ValidationErrors | null>((resolve) => {
-      this.authService.getAllUsers().subscribe((res) => {
-        if (res.find((user: IUser) => user.email == control.value)) {
-          resolve({ emailError: true, warning: true });
-        } else {
-          resolve(null);
-        }
-      });
-    });
-  };
-
-  usernameValidator = (control: AbstractControl) => {
-    return new Promise<ValidationErrors | null>((resolve) => {
-      this.authService.getAllUsers().subscribe((res) => {
-        if (res.find((user: IUser) => user.username == control.value)) {
-          resolve({ usernameError: true, warning: true });
-        } else {
-          resolve(null);
-        }
-      });
-    });
-  };
 }

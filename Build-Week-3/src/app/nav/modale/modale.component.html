@@ -1,5 +1,19 @@
-<nz-modal [(nzVisible)]="isVisible" nzTitle="The Modal" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
-  <ng-container *nzModalContent>
-    <p>Content one</p>
-  </ng-container>
+<nz-modal
+  [(nzVisible)]="isVisible"
+  [nzTitle]="modalTitle"
+  [nzContent]="modalContent"
+  [nzFooter]="modalFooter"
+  (nzOnCancel)="handleCancel()"
+>
+  <ng-template #modalTitle>Custom Modal Title</ng-template>
+
+  <ng-template #modalContent>
+    <input type="text" placeholder="Titolo">
+    <textarea placeholder="A cosa stai pensando?" id="" cols="20" rows="5"></textarea>
+  </ng-template>
+
+  <ng-template #modalFooter>
+    <button nz-button nzType="default" (click)="handleCancel()">Annulla</button>
+    <button nz-button nzType="primary" (click)="addPost()" class="btn">Pubblica</button>
+  </ng-template>
 </nz-modal>

@@ -1,5 +1,5 @@
  nz-descriptions {
-   margin: 1rem 0.5rem;
+   margin: 1rem 1rem;
 
  }
 
@@ -11,5 +11,28 @@
      border-color: #003669;
      background-color: #003669;
      color: white;
+     padding: 0
    }
+ }
+
+ #avatar-container {
+   position: relative;
+   margin-top: 1rem;
+   left: calc(50% - 60px);
+
+   >button {
+     top: 50px;
+     right: 30px
+   }
+ }
+
+ .ant-input {
+   color: white;
+   padding: 0;
+   padding: 0 0.5rem;
+
+ }
+
+ [disabled] {
+   cursor: default;
  }

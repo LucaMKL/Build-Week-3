@@ -2,11 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { API } from 'src/environments/environment';
+import { IPost } from '../Model/ipost';
 import { IUser } from '../Model/iuser';
 
 type AuthRes = {
   accessToken: string;
   user: {
+    avatar?: string;
+    name: string;
     username: string;
     email: string;
     id: number;
@@ -65,4 +68,29 @@ export class AuthService {
   getAllUsers(): Observable<IUser[]> {
     return this.http.get<IUser[]>(API + '/users');
   }
+
+  /*----POST-----*/
+
+  getAllPost(){
+    return this.http.get<IPost[]>(API + '/post')
+  }
+
+  addPost(post:IPost):void{
+
+  }
+
+  editPost(post:IPost):void{
+
+  }
+
+  deletePost(post:IPost):void{
+
+  }
+
+  updatePost(post:IPost):void{
+
+  }
+
+
+
 }
