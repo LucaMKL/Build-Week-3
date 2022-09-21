@@ -1,0 +1,45 @@
+nz-descriptions {
+  margin: 1rem 1rem;
+
+}
+
+::ng-deep .ant-descriptions-bordered {
+
+  .ant-descriptions-view,
+  .ant-descriptions-item-content,
+  .ant-descriptions-row {
+    border-color: #003669;
+    background-color: #003669;
+    color: white;
+    padding: 0
+  }
+}
+
+.ant-input {
+  color: white;
+  padding: 0;
+  padding: 0 0.5rem;
+
+}
+
+[disabled] {
+  cursor: default;
+}
+
+
+.anticon.tool{
+   position: absolute;
+   height: 1rem;
+   width: 1rem;
+   top: 0;
+   right: 0;
+   z-index: 1;
+   height: 100%;
+   margin-right: 12px;
+   margin-left: 4px;
+}
+
+
+#reset-btn {
+ margin-left: 1rem;
+}

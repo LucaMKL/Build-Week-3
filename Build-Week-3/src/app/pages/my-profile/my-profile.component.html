@@ -1,48 +1,10 @@
 <div id="avatar-container">
-  <nz-avatar nzIcon="user" [nzSize]="120" [nzSrc]="user.avatar"></nz-avatar>
-  <button *ngIf="editMode" nz-button nzType="primary" nzShape="circle">
+  <nz-avatar nzIcon="user" [nzSize]="120" [nzSrc]="'https://i.pravatar.cc/150?img=' + userId"></nz-avatar>
+<!--   <button nz-button nzType="primary" nzShape="circle">
     <span nz-icon nzType="edit"></span>
-  </button>
+  </button> -->
 </div>
 
-<form nz-form [formGroup]="updateForm">
-  <nz-descriptions nzTitle="Le tue Info:" nzBordered [nzExtra]="edit">
+<app-user-data></app-user-data>
 
-    <nz-descriptions-item class="test" nzTitle="Nome">
-      <nz-form-control nzHasFeedback nzErrorTip="Nome di almeno 3 caratteri">
 
-        <input nz-input nzBorderless
-        type="text" formControlName="name" id="name" />
-
-      </nz-form-control>
-    </nz-descriptions-item>
-
-    <nz-descriptions-item nzTitle="Username">
-      <nz-form-control nzHasFeedback nzValidatingTip="Validating..."
-      nzWarningTip="Username già in uso" nzErrorTip="Username di almeno 3 caratteri">
-
-        <input nz-input nzBorderless
-        type="text" formControlName="username"  />
-
-      </nz-form-control>
-    </nz-descriptions-item>
-
-    <nz-descriptions-item nzTitle="Email">
-      <nz-form-control nzHasFeedback nzValidatingTip="Validating..."
-      nzWarningTip="Email già in uso" nzErrorTip="Inserire un Email valida">
-
-        <input nz-input nzBorderless
-        formControlName="email" type="email" />
-
-      </nz-form-control>
-    </nz-descriptions-item>
-
-  </nz-descriptions>
-</form>
-
-<ng-template #edit>
-  <button nz-button nzType="primary" (click)="toggleActive()">
-   {{editMode? "Salva" : "Modifica"}}
-    <span nz-icon nzType="edit"></span>
-  </button>
-</ng-template>

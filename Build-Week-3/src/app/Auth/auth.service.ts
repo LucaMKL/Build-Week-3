@@ -71,24 +71,20 @@ export class AuthService {
 
   /*----POST-----*/
 
-  getAllPost(){
-    return this.http.get<IPost[]>(API + '/post')
+  getAllPost(): Observable<IPost[]>{
+    return this.http.get<IPost[]>(API + '/posts')
   }
 
-  addPost(post:IPost):void{
-
+  addPost(post:IPost): Observable<IPost>{
+    return this.http.post<IPost>(API + '/posts', post)
   }
 
-  editPost(post:IPost):void{
-
+  editPost(post:IPost): Observable<IPost>{
+    return this.http.patch<IPost>(API + '/posts/' + post.id, post)
   }
 
-  deletePost(post:IPost):void{
-
-  }
-
-  updatePost(post:IPost):void{
-
+  deletePost(post:IPost): Observable<IPost>{
+    return this.http.delete<IPost>(API + '/posts/' + post.id)
   }
 
 

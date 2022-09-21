@@ -6,7 +6,46 @@
       "name": "Sergio",
       "username": "Sergio",
       "id": 1
+    },
+    {
+      "email": "foqire@mailinator.com",
+      "password": "$2a$10$fZ8deeVe9.CHLCSylb./NuAVFBZ61RsfSG4cTK5ehkAVxHzbOxSaW",
+      "name": "Wylie Washington",
+      "username": "Zykigytipe",
+      "id": 2
+    },
+    {
+      "email": "sal97@scend.com",
+      "password": "$2a$10$yI3iDfrBLlPvIoPhwhd5UO9uv9OKJDQtsbl2oxOB668.z9ZuenQy2",
+      "name": "Salio",
+      "username": "Sal",
+      "id": 3
     }
   ],
-  "posts": []
+  "posts": [
+    {
+      "userId": 1,
+      "title": "Magni velit nesciunt et dolor",
+      "content": "Animi praesentium est non non",
+      "id": 1
+    },
+    {
+      "userId": 1,
+      "title": "Dolor in sit quasi quis volup",
+      "content": "Dignissimos ex reprehenderit u",
+      "id": 2
+    },
+    {
+      "userId": 1,
+      "title": "Recusandae Excepteur maxime o",
+      "content": "Vel iure labore eos mollitia ",
+      "id": 3
+    },
+    {
+      "userId": 3,
+      "title": "Ciao",
+      "content": "cosa fa un maiale che cade da un grattacielo? \nSPECK!",
+      "id": 4
+    }
+  ]
 }

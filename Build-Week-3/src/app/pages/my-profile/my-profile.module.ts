@@ -7,11 +7,15 @@ import { NzDescriptionsModule } from 'ng-zorro-antd/descriptions';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzSharedFormModule } from 'src/app/shared/ng-zorro/nz-shared-form.module';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { UserDataComponent } from './user-data/user-data.component';
+import { UserPostComponent } from './user-post/user-post.component';
 
 
 @NgModule({
   declarations: [
-    MyProfileComponent
+    MyProfileComponent,
+    UserDataComponent,
+    UserPostComponent
   ],
   imports: [
     CommonModule,

@@ -14,6 +14,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { NgZorroModule } from './shared/ng-zorro/ng-zorro.module';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { ModaleComponent } from './nav/modale/modale.component';
+import { FormModaleModule } from './nav/modale/form-modale/form-modale.module';
+import { ShowPostModule } from './Model/show-post/show-post.module';
 registerLocaleData(it);
 
 @NgModule({
@@ -21,7 +23,7 @@ registerLocaleData(it);
     AppComponent,
     NavBarComponent,
     HomeComponent,
-    ModaleComponent
+    ModaleComponent,
   ],
   imports: [
     NzModalModule,
@@ -29,7 +31,9 @@ registerLocaleData(it);
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    NgZorroModule
+    NgZorroModule,
+    FormModaleModule,
+    ShowPostModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: it_IT }

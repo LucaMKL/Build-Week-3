@@ -2,7 +2,7 @@
   <span nz-icon nzType="home"></span>
   <span>Home</span>
 </li>
-<li nz-submenu [nzTitle]="getUserName()" nzIcon="user" nzSrc="">
+<li nz-submenu [nzTitle]="getUserName()" nzIcon="user">
   <ul *ngIf="isLogged">
     <li nz-menu-item [routerLink]="['/myProfile', userId]">
       <span nz-icon nzType="edit" nzTheme="outline"></span>
@@ -35,3 +35,4 @@
 
 
 <app-modale></app-modale>
+
