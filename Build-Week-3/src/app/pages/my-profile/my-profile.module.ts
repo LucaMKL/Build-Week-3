@@ -11,6 +11,7 @@ import { UserDataComponent } from './user-data/user-data.component';
 import { UserPostComponent } from './user-post/user-post.component';
 
 
+
 @NgModule({
   declarations: [
     MyProfileComponent,

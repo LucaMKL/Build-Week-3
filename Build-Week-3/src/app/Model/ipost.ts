@@ -1,9 +1,14 @@
+import { IUser } from "./iuser";
+
 export interface IPost {
   id: number
-  userID: number;
+  userId: number;
+  userObj?: IUser;
   title: string;
   content: string;
-
-  allLikeId:number[]
+  children: IPost[];
+  allLikeId:number[];
+  date: Date;
+  allDislikeId:number[];
 
 }

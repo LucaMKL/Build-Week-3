@@ -26,13 +26,19 @@ export class FormModaleComponent implements OnInit {
     this.postForm = this.formBuilder.group({
       userId: this.authService.getLoggedUser()?.user.id,
       title: [null, [Validators.required, Validators.minLength(2)]],
-      content: [null, [Validators.required, Validators.minLength(10)]]
+      content: [null, [Validators.required, Validators.minLength(10)]],
+      date: new Date(),
+      allLikeId: [[]],
+      allDislikeId: [[]]
     });
   }
 
   onSubmit(): void {
+    console.log(this.authService.getLoggedUser())
     if (this.postForm.valid) {
       this.isLoading = true;
+      this.postForm.patchValue({date: new Date()})
+      console.log(this.postForm.value)
       this.authService.addPost(this.postForm.value)
         .subscribe({
           complete: () => { this.isVisible.emit(false) },

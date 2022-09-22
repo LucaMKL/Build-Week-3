@@ -25,33 +25,52 @@
   "posts": [
     {
       "userId": 1,
-      "title": "Magni velit nesciunt et dolor",
-      "content": "Animi praesentium est non non",
+      "title": "Iusto repellendus Aliquip dig",
+      "content": "Ut ut cupiditate nostrum sint ",
+      "date": "2022-09-22T10:23:27.978Z",
+      "allLikeId": [
+        3,
+        1
+      ],
+      "allDislikeId": [],
       "id": 1
     },
     {
-      "userId": 1,
-      "title": "Dolor in sit quasi quis volup",
-      "content": "Dignissimos ex reprehenderit u",
+      "userId": 3,
+      "title": "Sunt sint veritatis ",
+      "content": "Dolor inventore ut i",
+      "date": "2022-09-22T10:23:41.520Z",
+      "allLikeId": [
+        1
+      ],
+      "allDislikeId": [
+        3
+      ],
       "id": 2
     },
     {
       "userId": 1,
-      "title": "Recusandae Excepteur maxime o",
-      "content": "Vel iure labore eos mollitia ",
+      "title": "Sit ipsum doloremque aut labo",
+      "content": "Sed qui facere voluptate place",
+      "date": "2022-09-22T12:09:33.363Z",
+      "allLikeId": [
+        1
+      ],
+      "allDislikeId": [],
       "id": 3
     },
     {
-      "userId": 3,
-      "title": "Ciao",
-      "content": "cosa fa un maiale che cade da un grattacielo? \nSPECK!",
+      "userId": 1,
+      "title": "Cillum quisquam dolor qui sunt",
+      "content": "Et eligendi debitis ipsum eve",
+      "date": "2022-09-22T12:13:49.774Z",
+      "allLikeId": [
+        1
+      ],
+      "allDislikeId": [
+        3
+      ],
       "id": 4
-    },
-    {
-      "userId": 3,
-      "title": "Et sit sit unde poss",
-      "content": "Atque temporibus nul",
-      "id": 5
     }
   ]
 }
