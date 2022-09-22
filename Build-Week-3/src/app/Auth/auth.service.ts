@@ -63,8 +63,6 @@ export class AuthService {
     return this.http.get<IUser>(API + '/users/' + id);
   }
 
-  getToken() {}
-
   getAllUsers(): Observable<IUser[]> {
     return this.http.get<IUser[]>(API + '/users');
   }
@@ -73,6 +71,10 @@ export class AuthService {
 
   getAllPost(): Observable<IPost[]>{
     return this.http.get<IPost[]>(API + '/posts')
+  }
+
+  getPostsByUserId(userId: number | string): Observable<IPost[]>{
+    return this.http.get<IPost[]>(API + '/posts?userId=' + userId)
   }
 
   addPost(post:IPost): Observable<IPost>{

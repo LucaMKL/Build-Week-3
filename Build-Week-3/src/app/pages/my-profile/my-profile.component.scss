@@ -1,7 +1,6 @@
  #avatar-container {
    position: relative;
    margin-top: 1rem;
-   left: calc(50% - 60px);
 
    >button {
      top: 50px;
@@ -10,3 +9,6 @@
  }
 
 
+ .ant-avatar{
+    left: calc(50% - 75px);
+   }

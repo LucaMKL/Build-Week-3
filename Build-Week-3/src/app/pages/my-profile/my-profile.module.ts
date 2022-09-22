@@ -8,7 +8,7 @@ import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzSharedFormModule } from 'src/app/shared/ng-zorro/nz-shared-form.module';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { UserDataComponent } from './user-data/user-data.component';
-import { UserPostComponent } from './user-post/user-post.component';
+import { ShowPostModule } from 'src/app/Model/show-post/show-post.module';
 
 
 
@@ -16,7 +16,6 @@ import { UserPostComponent } from './user-post/user-post.component';
   declarations: [
     MyProfileComponent,
     UserDataComponent,
-    UserPostComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +23,8 @@ import { UserPostComponent } from './user-post/user-post.component';
     NzDescriptionsModule,
     NzAvatarModule,
     NzSharedFormModule,
-    NzToolTipModule
+    NzToolTipModule,
+    ShowPostModule
   ]
 })
 export class MyProfileModule { }

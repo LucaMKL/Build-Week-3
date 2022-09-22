@@ -29,19 +29,21 @@ export class FormModaleComponent implements OnInit {
       content: [null, [Validators.required, Validators.minLength(10)]],
       date: new Date(),
       allLikeId: [[]],
-      allDislikeId: [[]]
+      allDislikeId: [[]],
+      children: [[]]
     });
   }
 
   onSubmit(): void {
-    console.log(this.authService.getLoggedUser())
     if (this.postForm.valid) {
       this.isLoading = true;
-      this.postForm.patchValue({date: new Date()})
-      console.log(this.postForm.value)
+      this.postForm.patchValue({ date: new Date() })
+
       this.authService.addPost(this.postForm.value)
         .subscribe({
-          complete: () => { this.isVisible.emit(false) },
+          complete: () => {
+            this.isVisible.emit(false)
+          },
           error: (err) => {
             console.error('httpError', err)
             this.isLoading = false;
@@ -50,7 +52,7 @@ export class FormModaleComponent implements OnInit {
               'Qualcosa è andato storto',
               'Non è stato possibile Pubblicare il post, riprova più tardi',
               { nzPlacement: 'top' }
-              );
+            );
           }
         })
     } else {

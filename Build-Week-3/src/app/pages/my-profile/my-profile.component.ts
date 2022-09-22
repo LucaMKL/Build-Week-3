@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/Auth/auth.service';
+import { IPost } from 'src/app/Model/ipost';
 
 @Component({
   selector: 'app-my-profile',
@@ -8,14 +10,30 @@ import { AuthService } from 'src/app/Auth/auth.service';
 })
 export class MyProfileComponent implements OnInit {
 
-  userId?: number
+  userId!: number | string
 
-  constructor(
-    private authService: AuthService
-  ) { }
+  posts: IPost[] = []
+
+  constructor(private authService: AuthService,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.userId = (this.authService.getLoggedUser())?.user.id
+    this.userId = this.route.snapshot.paramMap.get('id') || 0
+    console.log();
+    this.authService.getAllUsers()
+      .subscribe(users => {
+        this.authService.getPostsByUserId(this.userId)
+          .subscribe({
+           next: posts => {
+              posts = posts.map(post => {
+                let user = users.find(user => user.id == post.userId)
+                post.userObj = user
+                return post
+              })
+              this.posts = posts.reverse()
+            }
+          })
+      })
   }
+
 
 }

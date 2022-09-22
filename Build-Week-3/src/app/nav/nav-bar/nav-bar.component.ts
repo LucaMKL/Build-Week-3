@@ -38,5 +38,7 @@ export class NavBarComponent implements OnInit {
   showModal(): void {
     this.modal.isVisible = true;
   }
+
+
 }
 

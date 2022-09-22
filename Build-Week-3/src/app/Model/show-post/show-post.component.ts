@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { formatDistance } from 'date-fns';
 import { AuthService } from 'src/app/Auth/auth.service';
 import { IPost } from '../ipost';
+import { IUser } from '../iuser';
 
 @Component({
   selector: 'app-show-post',
@@ -10,28 +11,13 @@ import { IPost } from '../ipost';
 })
 export class ShowPostComponent implements OnInit {
 
-  posts: IPost[] = [];
+  @Input() posts?: IPost[];
 
   time = formatDistance(new Date(), new Date());
 
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
-    this.authService.getAllUsers()
-      .subscribe(users => {
-        this.authService.getAllPost()
-          .subscribe(
-            posts => {
-              posts = posts.map(post => {
-                let user = users.find(user => user.id == post.userId)
-                post.userObj = user
-                return post
-              })
-
-              this.posts = posts
-            }
-          )
-      })
   }
 
   getTime(post: IPost): string {
@@ -55,7 +41,7 @@ export class ShowPostComponent implements OnInit {
         item.allLikeId.push(loggedUser.user.id)
       } else {
         let index = item.allLikeId.findIndex(userId => userId == loggedUser?.user.id)
-        if(index > -1) item.allLikeId.splice(index, 1)
+        if (index > -1) item.allLikeId.splice(index, 1)
       }
 
       if (!this.iLikedOrNot(item, false) && !likeOrNot) {
@@ -63,7 +49,7 @@ export class ShowPostComponent implements OnInit {
 
       } else {
         let index = item.allDislikeId.findIndex(userId => userId == loggedUser?.user.id)
-        if(index > -1) item.allDislikeId.splice(index, 1)
+        if (index > -1) item.allDislikeId.splice(index, 1)
       }
 
       this.updatePost(item);
@@ -80,50 +66,15 @@ export class ShowPostComponent implements OnInit {
     }
   }
 
-  updatePost(post: IPost){
+  updatePost(post: IPost) {
     let tmp = post.userObj
     post.userObj = undefined
 
     this.authService.editPost(post)
-    .subscribe()
+      .subscribe()
 
     post.userObj = tmp
   }
-
-
-  /*  dataP = {
-     author: 'Han Solo',
-     avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-     content:
-       'We supply a series of design principles, practical patterns and high quality design resources' +
-       '(Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
-     children: [
-       {
-         author: 'Han Solo',
-         avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-         content:
-           'We supply a series of design principles, practical patterns and high quality design resources' +
-           '(Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
-         children: [
-           {
-             author: 'Han Solo',
-             avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-             content:
-               'We supply a series of design principles, practical patterns and high quality design resources' +
-               '(Sketch and Axure), to help people create their product prototypes beautifully and efficiently.'
-           },
-           {
-             author: 'Han Solo',
-             avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-             content:
-               'We supply a series of design principles, practical patterns and high quality design resources' +
-               '(Sketch and Axure), to help people create their product prototypes beautifully and efficiently.'
-           }
-         ]
-       }
-     ]
-   }; */
-
 
   //commented
   /*

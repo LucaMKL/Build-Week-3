@@ -1,6 +1,6 @@
-<nz-list [nzDataSource]="posts" [nzRenderItem]="item" [nzItemLayout]="'horizontal'">
+<nz-list [nzDataSource]="posts" [nzRenderItem]="itemTemplate" [nzItemLayout]="'horizontal'">
 
-  <ng-template #item let-item>
+  <ng-template #itemTemplate let-item>
     <nz-comment [nzAuthor]="getUsername(item)" [nzDatetime]="getTime(item)">
 
       <nz-avatar nz-comment-avatar nzIcon="user" [nzSrc]="getAvatar(item)"></nz-avatar>
@@ -10,39 +10,34 @@
         <p>{{ item.content }}</p>
       </nz-comment-content>
 
-      <!-- <nz-comment-action>Reply to</nz-comment-action> -->
+      <nz-comment-action>Reply to</nz-comment-action>
 
       <nz-comment-action>
-        <span nz-tooltip nzTitle="Like" nz-icon nzType="like" [nzTheme]="iLikedOrNot(item, true) ? 'twotone' : 'outline'"
-          (click)="likeOrDislike(item, true)"></span>
+        <span nz-tooltip nzTitle="Like" nz-icon nzType="like"
+          [nzTheme]="iLikedOrNot(item, true) ? 'twotone' : 'outline'" (click)="likeOrDislike(item, true)"></span>
         <span class="count like">{{item.allLikeId ? item.allLikeId.length : 0}}</span>
       </nz-comment-action>
 
       <nz-comment-action>
-        <span nz-tooltip nzTitle="Dislike" nz-icon nzType="dislike" [nzTheme]="iLikedOrNot(item, false) ? 'twotone' : 'outline'"
-          (click)="likeOrDislike(item, false)"></span>
+        <span nz-tooltip nzTitle="Dislike" nz-icon nzType="dislike"
+          [nzTheme]="iLikedOrNot(item, false) ? 'twotone' : 'outline'" (click)="likeOrDislike(item, false)"></span>
         <span class="count dislike">{{ item.allDislikeId.length }}</span>
       </nz-comment-action>
 
+
+
+     <ng-container *ngIf="item.children && item.children.length">
+
+        <nz-list [nzDataSource]="item.children" [nzRenderItem]="itemTemplate" [nzItemLayout]="'horizontal'">
+
+        </nz-list>
+
+      </ng-container>
+
     </nz-comment>
+
   </ng-template>
 </nz-list>
-
-
-
-
-<!--     <ng-container *ngIf="item.children && item.children.length">
-        <ng-template ngFor let-child [ngForOf]="item.children">
-          <ng-template
-            [ngTemplateOutlet]="commentTemplateRef"
-            [ngTemplateOutletContext]="{ item: child }"
-          ></ng-template>
-        </ng-template>
-      </ng-container>-->
-
-
-
-<!-- <ng-template [ngTemplateOutlet]="commentTemplateRef" [ngTemplateOutletContext]="{ item: posts }"></ng-template> -->
 
 
 <!-- commento -->
