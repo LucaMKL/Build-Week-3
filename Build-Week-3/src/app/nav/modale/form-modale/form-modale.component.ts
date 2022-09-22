@@ -29,8 +29,7 @@ export class FormModaleComponent implements OnInit {
       content: [null, [Validators.required, Validators.minLength(10)]],
       date: new Date(),
       allLikeId: [[]],
-      allDislikeId: [[]],
-      children: [[]]
+      allDislikeId: [[]]
     });
   }
 

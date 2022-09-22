@@ -11,13 +11,39 @@ import { IUser } from '../iuser';
 })
 export class ShowPostComponent implements OnInit {
 
-  @Input() posts?: IPost[];
+  @Input() posts: IPost[] = [];
+  loggedUser: any;
 
   time = formatDistance(new Date(), new Date());
 
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
+    this.loggedUser = this.authService.getLoggedUser();
+  }
+
+  userIsLogged():boolean{
+    return this.loggedUser ? true : false;
+  }
+
+  getParentPosts(): IPost[] {
+
+    let parentPosts: IPost[] = [];
+
+    if(this.posts) parentPosts = this.posts.filter(post=> post.parentId == undefined );
+
+    return parentPosts
+
+  }
+
+  getChildrenPosts(parentId: number | string): IPost[] {
+
+    let childrenPosts: IPost[] = [];
+
+    if(this.posts) childrenPosts = this.posts.filter(post=> post.parentId == parentId);
+
+    return childrenPosts
+
   }
 
   getTime(post: IPost): string {
@@ -69,43 +95,20 @@ export class ShowPostComponent implements OnInit {
   updatePost(post: IPost) {
     let tmp = post.userObj
     post.userObj = undefined
+    post.replayForm = undefined
 
     this.authService.editPost(post)
       .subscribe()
 
     post.userObj = tmp
+    post.replayForm = false
   }
 
-  //commented
-  /*
-    data: any[] = [];
-    submitting = false;
-    user = {
-      author: 'Han Solo',
-      avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'
-    };
-    inputValue = '';
 
-    handleSubmit(): void {
-      this.submitting = true;
-      const content = this.inputValue;
-      this.inputValue = '';
-      setTimeout(() => {
-        this.submitting = false;
-        this.data = [
-          ...this.data,
-          {
-            ...this.user,
-            content,
-            datetime: new Date(),
-            displayTime: formatDistance(new Date(), new Date())
-          }
-        ].map(e => ({
-          ...e,
-          displayTime: formatDistance(new Date(), e.datetime)
-        }));
-      }, 800);
-    } */
+  newComment(item : IPost){
+    item.replayForm = false
+    this.authService.refreshData()
+  }
 }
 
 

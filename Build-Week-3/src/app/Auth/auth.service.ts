@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { API } from 'src/environments/environment';
 import { IPost } from '../Model/ipost';
@@ -20,7 +21,7 @@ type AuthRes = {
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,private router: Router,) {}
 
   register(user: IUser): Observable<IUser> {
     return this.http.post<IUser>(API + '/register', user);
@@ -89,6 +90,12 @@ export class AuthService {
     return this.http.delete<IPost>(API + '/posts/' + post.id)
   }
 
-
+  refreshData():void {
+        //accrocchio? serve a ricaricare per mostrare il post aggiunto dopo l'invio della modale
+        const currentUrl = this.router.url;
+        this.router.navigateByUrl('/myProfile', {skipLocationChange: true}).then(()=>{
+        this.router.navigate([currentUrl])
+      });
+  }
 
 }

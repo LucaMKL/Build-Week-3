@@ -9,11 +9,14 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { FormsModule } from '@angular/forms';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
-
+import { ShowPostFormComponent } from './show-post-form/show-post-form.component';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 
 @NgModule({
   declarations: [
     ShowPostComponent,
+    ShowPostFormComponent,
   ],
   imports: [
     CommonModule,
@@ -24,7 +27,9 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
     NzFormModule,
     NzButtonModule,
     FormsModule,
-    NzToolTipModule
+    NzToolTipModule,
+    NzDividerModule,
+    NzCollapseModule
 
   ],
   exports: [

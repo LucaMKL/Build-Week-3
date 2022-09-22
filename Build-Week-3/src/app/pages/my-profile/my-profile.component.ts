@@ -27,6 +27,7 @@ export class MyProfileComponent implements OnInit {
               posts = posts.map(post => {
                 let user = users.find(user => user.id == post.userId)
                 post.userObj = user
+                post.replayForm = false
                 return post
               })
               this.posts = posts.reverse()

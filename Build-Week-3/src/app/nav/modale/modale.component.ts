@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/Auth/auth.service';
 
 @Component({
   selector: 'app-modale',
@@ -10,7 +11,7 @@ export class ModaleComponent implements OnInit {
 
   isVisible = false
 
-  constructor(private router: Router) { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
   }
@@ -22,11 +23,7 @@ export class ModaleComponent implements OnInit {
   toggle() {
     this.isVisible = !this.isVisible;
 
-    //accrocchio? serve a ricaricare per mostrare il post aggiunto dopo l'invio della modale
-    const currentUrl = this.router.url;
-    this.router.navigateByUrl('/myProfile', {skipLocationChange: true}).then(()=>{
-    this.router.navigate([currentUrl])
-  });
+    this.authService.refreshData()
 
   }
 

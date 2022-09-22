@@ -32,7 +32,7 @@ export class NavBarComponent implements OnInit {
 
   logout(){
     this.authService.removeAccess()
-    this.router.navigate(['/'])
+    this.authService.refreshData()
   }
 
   showModal(): void {

@@ -4,12 +4,14 @@ export interface IPost {
   id: number
   userId: number;
   parentId?: number
-  userObj?: IUser;
+
+  date: Date;
   title: string;
   content: string;
-  children: number[];
+
   allLikeId:number[];
-  date: Date;
   allDislikeId:number[];
 
+  userObj?: IUser;
+  replayForm?: boolean;
 }
