@@ -16,6 +16,8 @@ export class UserDataComponent implements OnInit {
   editMode: boolean = false;
   updateForm!: FormGroup;
 
+  displayEditMode: boolean = true;
+
   user: IUser = {
     id: -1,
     name: '',
@@ -52,9 +54,22 @@ export class UserDataComponent implements OnInit {
                 email: res.email
               })
 
-            } else {
+            } else if(this.route.snapshot.parent?.routeConfig?.path == 'user'){
+
+              this.user = res
+
+              this.updateForm.setValue({
+                id: res.id,
+                name: res.name,
+                username: res.username,
+                email: res.email
+              })
+
+              this.displayEditMode = false
+
+            }else{
               this.router.navigate(['/'])
-            }
+          }
 
           }
         })

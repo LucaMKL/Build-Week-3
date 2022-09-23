@@ -4,14 +4,13 @@ import { ShowPostComponent } from './show-post.component';
 import { NzCommentModule } from 'ng-zorro-antd/comment';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzListModule } from 'ng-zorro-antd/list';
-import { FormsModule } from '@angular/forms';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { ShowPostFormComponent } from './show-post-form/show-post-form.component';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
+import { NzSharedFormModule } from 'src/app/shared/ng-zorro/nz-shared-form.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -20,16 +19,15 @@ import { NzCollapseModule } from 'ng-zorro-antd/collapse';
   ],
   imports: [
     CommonModule,
+    RouterModule,
     NzCommentModule,
     NzAvatarModule,
     NzIconModule,
     NzListModule,
-    NzFormModule,
-    NzButtonModule,
-    FormsModule,
     NzToolTipModule,
     NzDividerModule,
-    NzCollapseModule
+    NzCollapseModule,
+    NzSharedFormModule
 
   ],
   exports: [

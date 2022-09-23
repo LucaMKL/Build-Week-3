@@ -34,6 +34,13 @@
       "name": "Lisandra Cardenas",
       "username": "xebovykim",
       "id": 5
+    },
+    {
+      "email": "linoxixu@mailinator.com",
+      "password": "$2a$10$ZPq5Mh/E9quGs7f00Jsgne6hqmldn8pxHR0h4WoXS9bZ4n0g.Uxku",
+      "name": "Nina Maynard",
+      "username": "ldnfgaldgkn",
+      "id": 6
     }
   ],
   "posts": [
@@ -43,7 +50,9 @@
       "content": "Ex totam ipsum suscipit sint v",
       "date": "2022-09-22T19:59:03.234Z",
       "allLikeId": [],
-      "allDislikeId": [],
+      "allDislikeId": [
+        6
+      ],
       "id": 1
     },
     {
@@ -55,7 +64,9 @@
         5,
         1
       ],
-      "allDislikeId": [],
+      "allDislikeId": [
+        6
+      ],
       "id": 2
     },
     {
@@ -64,7 +75,8 @@
       "content": "Inventore lorem pariatur Magn",
       "date": "2022-09-22T20:13:06.193Z",
       "allLikeId": [
-        1
+        1,
+        6
       ],
       "allDislikeId": [
         5
@@ -167,7 +179,9 @@
       "content": "Corrupti dolor nisi magnam od",
       "date": "2022-09-22T22:05:32.516Z",
       "allLikeId": [
-        1
+        1,
+        5,
+        6
       ],
       "allDislikeId": [],
       "id": 12
@@ -181,6 +195,58 @@
       "allLikeId": [],
       "allDislikeId": [],
       "id": 13
+    },
+    {
+      "parentId": 4,
+      "userId": 4,
+      "title": "",
+      "content": "Qui et natus illo nihil in",
+      "date": "2022-09-23T07:25:59.511Z",
+      "allLikeId": [],
+      "allDislikeId": [],
+      "id": 14
+    },
+    {
+      "parentId": 2,
+      "userId": 6,
+      "title": "",
+      "content": "Rem ducimus id voluptate por",
+      "date": "2022-09-23T10:09:53.641Z",
+      "allLikeId": [
+        6
+      ],
+      "allDislikeId": [],
+      "id": 15
+    },
+    {
+      "userId": 6,
+      "title": "Voluptatem quis dicta neque la",
+      "content": "A et veniam esse totam nisi r",
+      "date": "2022-09-23T10:10:09.413Z",
+      "allLikeId": [],
+      "allDislikeId": [
+        6
+      ],
+      "id": 16
+    },
+    {
+      "userId": 6,
+      "title": "Excepteur fugit duis enim omn",
+      "content": "Nihil quis amet fugiat aut e",
+      "date": "2022-09-23T10:11:07.990Z",
+      "allLikeId": [],
+      "allDislikeId": [],
+      "id": 17
+    },
+    {
+      "parentId": 12,
+      "userId": 6,
+      "title": "",
+      "content": "Rerum proident distinctio In",
+      "date": "2022-09-23T10:11:56.353Z",
+      "allLikeId": [],
+      "allDislikeId": [],
+      "id": 18
     }
   ]
 }

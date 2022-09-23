@@ -25,6 +25,7 @@ import { ShowPostModule } from 'src/app/Model/show-post/show-post.module';
     NzSharedFormModule,
     NzToolTipModule,
     ShowPostModule
-  ]
+  ],
+  exports: [MyProfileComponent]
 })
 export class MyProfileModule { }
