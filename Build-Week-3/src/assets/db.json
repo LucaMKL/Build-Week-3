@@ -266,6 +266,15 @@
       "allLikeId": [],
       "allDislikeId": [],
       "id": 20
+    },
+    {
+      "userId": 1,
+      "title": "Voluptatem fugiat recusandae",
+      "content": "Duis sunt qui aute excepteur c",
+      "date": "2022-09-23T13:50:48.543Z",
+      "allLikeId": [],
+      "allDislikeId": [],
+      "id": 21
     }
   ]
 }

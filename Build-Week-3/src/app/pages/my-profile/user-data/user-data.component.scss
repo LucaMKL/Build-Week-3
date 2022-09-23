@@ -5,7 +5,13 @@ nz-descriptions {
 
 }
 
+
+
 ::ng-deep .ant-descriptions-bordered {
+
+  .ant-descriptions-title {
+    color: #ccc;
+  }
 
   .ant-descriptions-view,
   .ant-descriptions-item-content,
@@ -29,21 +35,21 @@ nz-descriptions {
 }
 
 
-.anticon.tool{
-   position: absolute;
-   height: 1rem;
-   width: 1rem;
-   top: 0;
-   right: 0;
-   z-index: 1;
-   height: 100%;
-   margin-right: 12px;
-   margin-left: 4px;
+.anticon.tool {
+  position: absolute;
+  height: 1rem;
+  width: 1rem;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  height: 100%;
+  margin-right: 12px;
+  margin-left: 4px;
 }
 
 
 #reset-btn {
- margin-left: 1rem;
+  margin-left: 1rem;
 }
 
 ::selection {
