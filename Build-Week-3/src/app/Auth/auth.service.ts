@@ -93,7 +93,7 @@ export class AuthService {
   refreshData():void {
         //accrocchio? serve a ricaricare per mostrare il post aggiunto dopo l'invio della modale
         const currentUrl = this.router.url;
-        this.router.navigateByUrl('/myProfile', {skipLocationChange: true}).then(()=>{
+        this.router.navigateByUrl('/search', {skipLocationChange: true}).then(()=>{
         this.router.navigate([currentUrl])
       });
   }

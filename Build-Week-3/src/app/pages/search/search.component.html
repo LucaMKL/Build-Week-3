@@ -21,7 +21,7 @@
    </nz-list>
 
   <ng-template  #userTemplate let-user>
-    <h4 nz-typography ><nz-avatar [routerLink]="'/user/'+ user.id" nz-comment-avatar nzIcon="user" [nzSrc]="getAvatar(user)"></nz-avatar>
+    <h4 nz-typography ><nz-avatar [routerLink]="['/user/', user.id]" nz-comment-avatar nzIcon="user" [nzSrc]="getAvatar(user)"></nz-avatar>
     {{user.username}}</h4>
   </ng-template>
 

@@ -16,7 +16,7 @@
   <ng-template  #itemTemplate let-item>
     <nz-comment [nzAuthor]="getUsername(item)" [nzDatetime]="getTime(item)">
 
-      <nz-avatar [nzSize]="48" [routerLink]="'/user/' + item.userId" nz-comment-avatar nzIcon="user" [nzSrc]="getAvatar(item)">
+      <nz-avatar [nzSize]="48" [routerLink]="['/user/', item.userId]" nz-comment-avatar nzIcon="user" [nzSrc]="getAvatar(item)">
       </nz-avatar>
 
       <nz-comment-content>
