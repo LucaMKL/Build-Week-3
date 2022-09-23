@@ -85,7 +85,6 @@
     },
     {
       "userId": 5,
-      "parentId": 2,
       "title": "Laborum Aspernatur doloribus ",
       "content": "Repudiandae autem in autem ven",
       "date": "2022-09-22T20:13:11.859Z",
@@ -247,6 +246,26 @@
       "allLikeId": [],
       "allDislikeId": [],
       "id": 18
+    },
+    {
+      "parentId": 14,
+      "userId": 6,
+      "title": "",
+      "content": "Deleniti qui adipisicing sit i",
+      "date": "2022-09-23T12:14:47.797Z",
+      "allLikeId": [],
+      "allDislikeId": [],
+      "id": 19
+    },
+    {
+      "parentId": 4,
+      "userId": 6,
+      "title": "",
+      "content": "Necessitatibus ad praesentium ",
+      "date": "2022-09-23T12:15:02.814Z",
+      "allLikeId": [],
+      "allDislikeId": [],
+      "id": 20
     }
   ]
 }

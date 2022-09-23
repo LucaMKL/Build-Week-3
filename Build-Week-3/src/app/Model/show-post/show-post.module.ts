@@ -11,6 +11,8 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { NzSharedFormModule } from 'src/app/shared/ng-zorro/nz-shared-form.module';
 import { RouterModule } from '@angular/router';
+import { NzTypographyModule } from 'ng-zorro-antd/typography';
+import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { RouterModule } from '@angular/router';
     NzToolTipModule,
     NzDividerModule,
     NzCollapseModule,
-    NzSharedFormModule
+    NzSharedFormModule,
+    NzTypographyModule,
+    NzSkeletonModule
 
   ],
   exports: [

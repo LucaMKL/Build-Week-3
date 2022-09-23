@@ -1,21 +1,26 @@
-<nz-list [nzDataSource]="getParentPosts()" [nzRenderItem]="itemTemplate" [nzItemLayout]="'horizontal'">
+<nz-list class="container" *ngIf="isLoading">
+  <nz-skeleton
+  [nzAvatar]="true"
+  [nzActive]="true"
+  [nzTitle]="true"
+  [nzLoading]="isLoading"
+></nz-skeleton>
+</nz-list>
 
-  <ng-template #itemTemplate let-item>
+
+<nz-list *ngIf="!isLoading" class="container" [nzDataSource]="getParentPosts()" [nzRenderItem]="itemTemplate"
+  [nzItemLayout]="'horizontal'">
+
+  <ng-template  #itemTemplate let-item>
     <nz-comment [nzAuthor]="getUsername(item)" [nzDatetime]="getTime(item)">
 
-      <nz-avatar [routerLink]="'/user/' + item.userId" nz-comment-avatar nzIcon="user" [nzSrc]="getAvatar(item)"></nz-avatar>
-
+      <nz-avatar [nzSize]="48" [routerLink]="'/user/' + item.userId" nz-comment-avatar nzIcon="user" [nzSrc]="getAvatar(item)">
+      </nz-avatar>
 
       <nz-comment-content>
-        <h3>{{item.title}}</h3>
+        <h4>{{item.title}}</h4>
         <p>{{ item.content }}</p>
       </nz-comment-content>
-
-      <nz-comment-action>
-        <span *ngIf="userIsLogged()" (click)="item.replayForm = !item.replayForm">
-          Reply to
-        </span>
-      </nz-comment-action>
 
       <nz-comment-action>
         <span nz-tooltip nzTitle="Like" nz-icon nzType="like"
@@ -29,22 +34,23 @@
         <span class="count dislike">{{ item.allDislikeId.length }}</span>
       </nz-comment-action>
 
+      <nz-comment-action>
+        <span *ngIf="userIsLogged()" (click)="item.replayForm = !item.replayForm">
+          Rispondi
+        </span>
+      </nz-comment-action>
+
       <app-show-post-form *ngIf="item.replayForm" [loggedUser]="loggedUser" [item]="item" (update)="newComment($event)">
       </app-show-post-form>
 
       <ng-container>
 
         <nz-collapse [nzGhost]="true">
-          <nz-collapse-panel
-          *ngIf="getChildrenPosts(item.id).length > 0"
-          [nzHeader]="'Mostra ' + getChildrenPosts(item.id).length +' commenti'"
-          [nzShowArrow]="false">
+          <nz-collapse-panel *ngIf="getChildrenPosts(item.id).length > 0"
+            [nzHeader]="'Mostra ' + getChildrenPosts(item.id).length +' commenti'" [nzShowArrow]="false">
 
-            <nz-list
-            [nzNoResult]="' '"
-            [nzDataSource]="getChildrenPosts(item.id)"
-            [nzRenderItem]="itemTemplate"
-            [nzItemLayout]="'horizontal'">
+            <nz-list [nzNoResult]="' '" [nzDataSource]="getChildrenPosts(item.id)" [nzRenderItem]="itemTemplate"
+              [nzItemLayout]="'horizontal'">
             </nz-list>
 
           </nz-collapse-panel>

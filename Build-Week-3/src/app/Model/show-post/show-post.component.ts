@@ -13,6 +13,7 @@ export class ShowPostComponent implements OnInit {
 
   @Input() posts: IPost[] = [];
   loggedUser: any;
+  isLoading = true
 
   time = formatDistance(new Date(), new Date());
 
@@ -20,6 +21,11 @@ export class ShowPostComponent implements OnInit {
 
   ngOnInit(): void {
     this.loggedUser = this.authService.getLoggedUser();
+  }
+
+  ngDoCheck(): void {
+
+    this.posts.length > 0 ? this.isLoading = false : this.isLoading = true;
   }
 
   userIsLogged():boolean{
@@ -104,11 +110,11 @@ export class ShowPostComponent implements OnInit {
     post.replayForm = false
   }
 
-
   newComment(item : IPost){
     item.replayForm = false
     this.authService.refreshData()
   }
+
 }
 
 
