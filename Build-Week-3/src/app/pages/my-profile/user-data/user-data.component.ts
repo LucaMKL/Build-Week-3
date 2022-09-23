@@ -157,4 +157,11 @@ export class UserDataComponent implements OnInit {
 
       })
   }
+
+  deleteUser(){
+    this.authService.deleteUser(this.user)
+    .subscribe({
+      complete: () => this.router.navigate(['/'])
+    })
+  }
 }

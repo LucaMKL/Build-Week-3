@@ -42,6 +42,12 @@
         </span>
       </nz-comment-action>
 
+      <nz-comment-action>
+        <span *ngIf=" loggedUser && (loggedUser.user.id == item.userId)"
+        (click)="deletePost(item)"
+         nz-icon nzType="delete" nzTheme="outline"></span>
+      </nz-comment-action>
+
       <app-show-post-form *ngIf="item.replayForm" [loggedUser]="loggedUser" [item]="item" (update)="newComment($event)">
       </app-show-post-form>
 

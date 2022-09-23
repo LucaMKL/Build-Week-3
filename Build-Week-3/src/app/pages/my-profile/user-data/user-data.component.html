@@ -1,31 +1,27 @@
 <form nz-form [formGroup]="updateForm">
-  <nz-descriptions nzTitle="Le tue Info:" nzBordered [nzExtra]="edit" [nzColumn]="{ xxl: 3, xl: 3, lg: 3, md: 2, sm: 1, xs: 1 }">
+  <nz-descriptions nzTitle="Le tue Info:" nzBordered [nzExtra]="edit"
+    [nzColumn]="{ xxl: 3, xl: 3, lg: 3, md: 2, sm: 1, xs: 1 }">
 
     <nz-descriptions-item class="test" nzTitle="Nome">
       <nz-form-control nzHasFeedback [nzErrorTip]="errorTip">
 
-        <input nz-input nzBorderless
-        type="text" formControlName="name" id="name" />
+        <input nz-input nzBorderless type="text" formControlName="name" id="name" />
 
       </nz-form-control>
     </nz-descriptions-item>
 
     <nz-descriptions-item nzTitle="Username">
-      <nz-form-control nzHasFeedback
-      [nzWarningTip]="warningTip" [nzErrorTip]="errorTip">
+      <nz-form-control nzHasFeedback [nzWarningTip]="warningTip" [nzErrorTip]="errorTip">
 
-        <input nz-input nzBorderless
-        type="text" formControlName="username"  />
+        <input nz-input nzBorderless type="text" formControlName="username" />
 
       </nz-form-control>
     </nz-descriptions-item>
 
     <nz-descriptions-item nzTitle="Email">
-      <nz-form-control nzHasFeedback nz-tooltip
-      [nzWarningTip]="warningTip" [nzErrorTip]="errorTip">
+      <nz-form-control nzHasFeedback nz-tooltip [nzWarningTip]="warningTip" [nzErrorTip]="errorTip">
 
-        <input nz-input nzBorderless
-        formControlName="email" type="email" />
+        <input nz-input nzBorderless formControlName="email" type="email" />
 
       </nz-form-control>
     </nz-descriptions-item>
@@ -33,15 +29,22 @@
   </nz-descriptions>
 </form>
 
-<ng-template #edit >
-  <button *ngIf="displayEditMode" nz-button nzType="primary" (click)="toggleActive()" [disabled]="editMode && !updateForm.valid">
-   {{editMode? "Salva" : "Modifica"}}
+<ng-template #edit>
+  <button *ngIf="displayEditMode" nz-button nzType="primary" (click)="toggleActive()"
+    [disabled]="editMode && !updateForm.valid">
+    {{editMode? "Salva" : "Modifica"}}
     <span nz-icon nzType="edit"></span>
   </button>
   <button *ngIf="editMode" nz-button nzType="primary" id="reset-btn" (click)="resetForm()">
     Reset
-     <span nz-icon nzType="undo"></span>
-   </button>
+    <span nz-icon nzType="undo"></span>
+  </button>
+
+  <button *ngIf="editMode" nz-button nzType="primary" id="reset-btn" (click)="deleteUser()">
+    <span nz-icon nzType="delete" nzTheme="outline"></span>
+  </button>
+
+
 </ng-template>
 
 <ng-template #warningTip>

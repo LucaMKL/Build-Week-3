@@ -98,7 +98,7 @@ export class ShowPostComponent implements OnInit {
     }
   }
 
-  updatePost(post: IPost) {
+  updatePost(post: IPost): void {
     let tmp = post.userObj
     post.userObj = undefined
     post.replayForm = undefined
@@ -110,11 +110,18 @@ export class ShowPostComponent implements OnInit {
     post.replayForm = false
   }
 
-  newComment(item : IPost){
+  newComment(item : IPost): void{
     item.replayForm = false
     this.authService.refreshData()
   }
 
+  deletePost(post: IPost): void{
+    this.authService.deletePost(post).
+    subscribe({
+      complete: () => this.authService.refreshData(),
+    })
+
+  }
 }
 
 

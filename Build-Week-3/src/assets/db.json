@@ -22,13 +22,6 @@
       "id": 3
     },
     {
-      "email": "horumisav@mailinator.com",
-      "password": "$2a$10$Gqh4cNm0Idy4fOxjuEdr/ecmsSdoxU2j63h9O2CPHq.SRHGWtnvfS",
-      "name": "Quemby Randall",
-      "username": "boqopiqy",
-      "id": 4
-    },
-    {
       "email": "nyjawacev@mailinator.com",
       "password": "$2a$10$0yGKcFzgb1SipYs.Uxk7qeevXqHFTpBJrxQHHVty9v3my0Da1ZR0m",
       "name": "Lisandra Cardenas",
@@ -196,16 +189,6 @@
       "id": 13
     },
     {
-      "parentId": 4,
-      "userId": 4,
-      "title": "",
-      "content": "Qui et natus illo nihil in",
-      "date": "2022-09-23T07:25:59.511Z",
-      "allLikeId": [],
-      "allDislikeId": [],
-      "id": 14
-    },
-    {
       "parentId": 2,
       "userId": 6,
       "title": "",
@@ -266,15 +249,6 @@
       "allLikeId": [],
       "allDislikeId": [],
       "id": 20
-    },
-    {
-      "userId": 1,
-      "title": "Voluptatem fugiat recusandae",
-      "content": "Duis sunt qui aute excepteur c",
-      "date": "2022-09-23T13:50:48.543Z",
-      "allLikeId": [],
-      "allDislikeId": [],
-      "id": 21
     }
   ]
 }
