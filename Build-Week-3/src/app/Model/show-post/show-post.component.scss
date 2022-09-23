@@ -3,9 +3,20 @@
 }
 
 .container {
-  margin: 3vh 5%;
+  margin: 3vh 0;
   border: 1px solid #aaa;
   border-radius: 8px;
+  max-width: 1200px;
+
+
+
+  @media (min-width: 768px) {
+    margin: 3vh 5%;
+  }
+
+  @media (min-width: 1300px) {
+    margin: 3vh auto;
+  }
 }
 
 .ant-list {
@@ -34,6 +45,6 @@ span {
   }
 }
 
-nz-list{
+nz-list {
   background-color: #fff;
 }

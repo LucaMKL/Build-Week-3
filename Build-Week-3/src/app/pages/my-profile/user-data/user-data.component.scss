@@ -5,7 +5,18 @@ nz-descriptions {
 
 }
 
+form{
+  margin: 3vh 0;
+  max-width: 1200px;
 
+  @media (min-width: 768px) {
+    margin: 3vh 5%;
+  }
+
+  @media (min-width: 1300px) {
+    margin: 3vh auto;
+  }
+}
 
 ::ng-deep .ant-descriptions-bordered {
 
